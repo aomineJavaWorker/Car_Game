@@ -594,6 +594,12 @@ MonoBehaviour:
   winPanel: {fileID: 189614754}
   timeText: {fileID: 882820899}
   winTimeText: {fileID: 566181702}
+  winImage: {fileID: 1831205314}
+  winSprites:
+  - {fileID: 21300000, guid: e2c6cc6cf98820140b1ef7098df1a9d0, type: 3}
+  - {fileID: 21300000, guid: 33e8cb156c4082846bd00e5014cca2de, type: 3}
+  - {fileID: 21300000, guid: d5df4c412970d1343bfb652c5a9e4a44, type: 3}
+  imageChangeInterval: 15
 --- !u!1 &170729379
 GameObject:
   m_ObjectHideFlags: 0
@@ -701,7 +707,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &189614755
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3570,7 +3576,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e2c6cc6cf98820140b1ef7098df1a9d0, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
