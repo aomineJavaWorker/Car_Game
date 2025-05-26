@@ -9,15 +9,20 @@ public class PlaceScript : MonoBehaviour, IDropHandler
     private Vector2 placeSize, carSize;
     private float xSizeDif, ySizeDif;
     public ObjectScript objectScript;
+    public TimerScript timerScript;
+
 
     public void OnDrop(PointerEventData eventData)
     {
+
         if ((eventData.pointerDrag != null) && Input.GetMouseButtonUp(0)
             && Input.GetMouseButton(2) == false)
         {
 
+
             if (eventData.pointerDrag.tag.Equals(tag))
             {
+
                 placeZRotation =
                 eventData.pointerDrag.GetComponent<RectTransform>().transform.eulerAngles.z;
 
@@ -37,6 +42,8 @@ public class PlaceScript : MonoBehaviour, IDropHandler
                 {
                     Debug.Log("Right Place");
                     objectScript.rightPlace = true;
+                    timerScript.CheckVictoryCondition();
+
 
                     // Iecentrē pozīciju
                     eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition =
@@ -53,42 +60,54 @@ public class PlaceScript : MonoBehaviour, IDropHandler
                     switch (eventData.pointerDrag.tag)
                     {
                         case "Garbage":
+                            objectScript.isGarbagePlaced = true;
                             objectScript.audioSource.PlayOneShot(objectScript.audioClips[2]);
                             break;
 
                         case "Medic":
+                            objectScript.isMedicPlaced = true;
                             objectScript.audioSource.PlayOneShot(objectScript.audioClips[4]);
                             break;
 
                         case "School":
+                            objectScript.isSchoolBuss = true;
                             objectScript.audioSource.PlayOneShot(objectScript.audioClips[3]);
                             break;
 
                         case "Cement":
+                            objectScript.isCement = true;
                             objectScript.audioSource.PlayOneShot(objectScript.audioClips[5]);
                             break;
                         case "e46":
+                            objectScript.isE46 = true;
                             objectScript.audioSource.PlayOneShot(objectScript.audioClips[6]);
                             break;
                         case "e61":
+                            objectScript.isE61 = true;
                             objectScript.audioSource.PlayOneShot(objectScript.audioClips[7]);
                             break;
                         case "b2":
+                            objectScript.isB2 = true;
                             objectScript.audioSource.PlayOneShot(objectScript.audioClips[8]);
                             break;
                         case "Policija":
+                            objectScript.isPolicija = true;
                             objectScript.audioSource.PlayOneShot(objectScript.audioClips[9]);
                             break;
                         case "Eskavators":
+                            objectScript.isEskavators = true;
                             objectScript.audioSource.PlayOneShot(objectScript.audioClips[10]);
                             break;
                         case "Traktors":
+                            objectScript.isTraktors1 = true;
                             objectScript.audioSource.PlayOneShot(objectScript.audioClips[11]);
                             break;
                         case "Traktors5":
+                            objectScript.isTraktors5 = true;
                             objectScript.audioSource.PlayOneShot(objectScript.audioClips[12]);
                             break;
                         case "Ugunsdzeseji":
+                            objectScript.isUgunsdzeseji = true;
                             objectScript.audioSource.PlayOneShot(objectScript.audioClips[13]);
                             break;
 
@@ -102,6 +121,7 @@ public class PlaceScript : MonoBehaviour, IDropHandler
             else
             {
                 objectScript.rightPlace = false;
+
                 objectScript.audioSource.PlayOneShot(objectScript.audioClips[1]);
 
                 switch (eventData.pointerDrag.tag)
@@ -161,6 +181,7 @@ public class PlaceScript : MonoBehaviour, IDropHandler
                         Debug.LogError("Unknown tag!");
                         break;
                 }
+                timerScript.CheckVictoryCondition();
 
             }
         }

@@ -13,13 +13,13 @@ public class TransportScript : MonoBehaviour
             if (Input.GetKey(KeyCode.Z))
             {
                 objectScript.lastDragged.GetComponent<RectTransform>().
-                     transform.Rotate(0, 0, Time.deltaTime * 12f);
+                     transform.Rotate(0, 0, Time.deltaTime * 24f);
             }
 
             if (Input.GetKey(KeyCode.X))
             {
                 objectScript.lastDragged.GetComponent<RectTransform>().
-                     transform.Rotate(0, 0, -Time.deltaTime * 12f);
+                     transform.Rotate(0, 0, -Time.deltaTime * 24f);
             }
 
             if (Input.GetKey(KeyCode.UpArrow))

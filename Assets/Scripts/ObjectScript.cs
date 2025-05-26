@@ -16,6 +16,21 @@ public class ObjectScript : MonoBehaviour
     public GameObject Traktors1;
     public GameObject Traktors5;
     public GameObject Ugunsdzeseji;
+    public bool isGarbagePlaced;
+    public bool isMedicPlaced;
+    public bool isSchoolBuss;
+    public bool isCement;
+    public bool isE46;
+    public bool isE61;
+    public bool isB2;
+    public bool isPolicija;
+    public bool isEskavators;
+    public bool isTraktors1;
+    public bool isTraktors5;
+    public bool isUgunsdzeseji;
+
+    
+
 
     [HideInInspector]
     public Vector2 gTruckPos;
