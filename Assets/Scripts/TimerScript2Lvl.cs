@@ -1,20 +1,21 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class TimerScript : MonoBehaviour
+public class TimerScript2lvl : MonoBehaviour
 {
-    public ObjectScript[] objectScripts;   // Visu mašīnu/objektu saraksts
+    public ObjectScriptlvl2[] objectScriptLvl2;  
     public GameObject winPanel;
     public Text timeText;
-    public Text winTimeText;  // Jauns teksts uzvaras panelī
+    public Text winTimeText;  
 
-    public Image winImage;           // Attēlu panelīs
-    public Sprite[] winSprites;      // Saraksts ar attēliem kas mainīsies
+    public Image winImage;           
+    public Sprite[] winSprites;      
     public float imageChangeInterval = 15f;
+   
 
     private float imageTimer = 0f;
     private int currentSpriteIndex = 0;
-    private float winTimer = 0f;
+    private float winTimer = 0f; 
 
 
     private float timer = 0f;
@@ -24,7 +25,7 @@ public class TimerScript : MonoBehaviour
     {
         if (winPanel != null)
         {
-            winPanel.SetActive(false);  // Panele ir aiztaisīta spēles sākumā
+            winPanel.SetActive(false);  
         }
     }
 
@@ -60,20 +61,15 @@ public class TimerScript : MonoBehaviour
 
     private bool AllVehiclesPlacedCorrectly()
     {
-        foreach (var obj in objectScripts)
+        foreach (var obj in objectScriptLvl2)
         {
-            if (!(obj.isGarbagePlaced &&
-                  obj.isMedicPlaced &&
-                  obj.isSchoolBuss &&
-                  obj.isCement &&
-                  obj.isE46 &&
-                  obj.isE61 &&
-                  obj.isB2 &&
-                  obj.isPolicija &&
-                  obj.isEskavators &&
-                  obj.isTraktors1 &&
-                  obj.isTraktors5 &&
-                  obj.isUgunsdzeseji))
+            if (!(obj.isVeloGPlaced &&
+                  obj.isTouringPlaced &&
+                  obj.isCustomPlaced &&
+                  obj.isCarPolPlaced &&
+                  obj.isHumaveePlaced &&
+                  obj.isCarToplessPlaced &&
+                  obj.isMotobikePlaced))
             {
                 return false;
             }
@@ -95,10 +91,10 @@ public class TimerScript : MonoBehaviour
 
         if (winSprites.Length > 0 && winImage != null)
         {
-            if (timer < 60)
+            if (timer < 60f)
                 currentSpriteIndex = 0; // 3 zvaigznes
-            else if (timer < 120)
-                currentSpriteIndex = 1; // 2 zvaigzns
+            else if (timer < 120f)
+                currentSpriteIndex = 1; // 2 zvaigznes
             else
                 currentSpriteIndex = 2; // 1 zvaigzne
 
