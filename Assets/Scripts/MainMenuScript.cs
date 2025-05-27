@@ -15,6 +15,11 @@ public class MainMenuScript : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
     }
 
+    public void ChaneonLvl2()
+    {
+        SceneManager.LoadScene("Lvl2");
+    }
+
     // Update is called once per frame
     public void Quit()
     {

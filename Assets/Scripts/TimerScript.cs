@@ -10,10 +10,13 @@ public class TimerScript : MonoBehaviour
 
     public Image winImage;           // Ссылка на Image в панели
     public Sprite[] winSprites;      // Список спрайтов, которые будут меняться
-    public float imageChangeInterval = 15f;  // Интервал смены картинки (в секундах)
+    public float imageChangeInterval = 15f;
+    // Интервал смены картинки (в секундах)
 
     private float imageTimer = 0f;
     private int currentSpriteIndex = 0;
+    private float winTimer = 0f; // Время после победы
+
 
     private float timer = 0f;
     private bool gameEnded = false;
@@ -28,20 +31,16 @@ public class TimerScript : MonoBehaviour
 
     void Update()
     {
-        CheckVictoryCondition();
         if (!gameEnded)
         {
             timer += Time.deltaTime;
-                imageTimer += Time.deltaTime;
-                if (imageTimer >= imageChangeInterval)
-                {
-                    imageTimer = 0f;
-                    currentSpriteIndex = (currentSpriteIndex + 1) % winSprites.Length;
-                    winImage.sprite = winSprites[currentSpriteIndex];
-                }
             UpdateTimeText();
+            CheckVictoryCondition();
         }
     }
+
+
+
 
     void UpdateTimeText()
     {
@@ -95,13 +94,17 @@ public class TimerScript : MonoBehaviour
         timeText.text = "Поздравляем!";
         winTimeText.text = $"Ваше время: {formattedTime}";
 
-        // Установить первую картинку
         if (winSprites.Length > 0 && winImage != null)
         {
-            currentSpriteIndex = 0;
+            if (timer < 30f)
+                currentSpriteIndex = 0; // 3 звезды
+            else if (timer < 45f)
+                currentSpriteIndex = 1; // 2 звезды
+            else
+                currentSpriteIndex = 2; // 1 звезда
+
             winImage.sprite = winSprites[currentSpriteIndex];
-            imageTimer = 0f; // ← Важно!
         }
     }
-}
 
+}
