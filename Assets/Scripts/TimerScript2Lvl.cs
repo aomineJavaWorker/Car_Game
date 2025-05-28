@@ -13,9 +13,7 @@ public class TimerScript2lvl : MonoBehaviour
     public float imageChangeInterval = 15f;
    
 
-    private float imageTimer = 0f;
     private int currentSpriteIndex = 0;
-    private float winTimer = 0f; 
 
 
     private float timer = 0f;

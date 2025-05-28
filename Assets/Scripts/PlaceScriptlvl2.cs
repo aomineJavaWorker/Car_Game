@@ -61,12 +61,12 @@ public class PlaceScriptlvl2 : MonoBehaviour, IDropHandler
                     {
                         case "Velo":
                             objectScript.isVeloGPlaced = true;
-                            objectScript.audioSource.PlayOneShot(objectScript.audioClips[1]);
+                            objectScript.audioSource.PlayOneShot(objectScript.audioClips[2]);
                             break;
 
                         case "touring":
                             objectScript.isTouringPlaced = true;
-                            objectScript.audioSource.PlayOneShot(objectScript.audioClips[2]);
+                            objectScript.audioSource.PlayOneShot(objectScript.audioClips[4]);
                             break;
 
                         case "Custom":
@@ -74,21 +74,21 @@ public class PlaceScriptlvl2 : MonoBehaviour, IDropHandler
                             objectScript.audioSource.PlayOneShot(objectScript.audioClips[3]);
                             break;
 
+                        case "CarPol":
+                            objectScript.isCarPolPlaced = true;
+                            objectScript.audioSource.PlayOneShot(objectScript.audioClips[5]);
+                            break;
                         case "humavee":
                             objectScript.isHumaveePlaced = true;
-                            objectScript.audioSource.PlayOneShot(objectScript.audioClips[4]);
+                            objectScript.audioSource.PlayOneShot(objectScript.audioClips[6]);
                             break;
                         case "CarTopless":
                             objectScript.isCarToplessPlaced = true;
-                            objectScript.audioSource.PlayOneShot(objectScript.audioClips[5]);
+                            objectScript.audioSource.PlayOneShot(objectScript.audioClips[7]);
                             break;
                         case "Motobike":
                             objectScript.isMotobikePlaced = true;
-                            objectScript.audioSource.PlayOneShot(objectScript.audioClips[6]);
-                            break;
-                        case "CarPol":
-                            objectScript.isCarPolPlaced = true;
-                            objectScript.audioSource.PlayOneShot(objectScript.audioClips[7]);
+                            objectScript.audioSource.PlayOneShot(objectScript.audioClips[8]);
                             break;
 
                         default:
@@ -124,18 +124,19 @@ public class PlaceScriptlvl2 : MonoBehaviour, IDropHandler
                         objectScript.CarPol.GetComponent<RectTransform>().localPosition
                              = objectScript.CarPolPos;
                         break;
-                    case "CarTopless":
-                        objectScript.carTopless.GetComponent<RectTransform>().localPosition
-                             = objectScript.CarToplessPos;
-                        break;
                     case "humavee":
                         objectScript.humavee.GetComponent<RectTransform>().localPosition
                              = objectScript.HumaveePos;
+                        break;
+                    case "CarTopless":
+                        objectScript.carTopless.GetComponent<RectTransform>().localPosition
+                             = objectScript.CarToplessPos;
                         break;
                     case "Motobike":
                         objectScript.Motobike.GetComponent<RectTransform>().localPosition
                              = objectScript.MotobikePos;
                         break;
+                    
 
                     default:
                         Debug.LogError("Unknown tag!");
