@@ -19,5 +19,11 @@ Unity projects kur var vilkt mašīnas tām paradzētā vietā
 
 **Otrā līmeni ir citas mašīnas**
 
-![image](https://github.com/user-attachments/assets/8d6b3dfe-b956-4408-aead-47e85c39a8df)
+![image](https://github.com/user-attachments/assets/60ddc822-81af-4b5e-9ff8-becd4eaae5d6)
+
+**Otrā līmenī katras 5 sekundes ekrāns paliek melns uz divām sekundēm**
+
+![image](https://github.com/user-attachments/assets/9b9be210-746a-4795-8f0b-023163d9b733)
+
+** Ir pievienota iespēja ar "C" burtu apgriezt mašinu uz 180 grādiem **
 
