@@ -52,5 +52,6 @@ public class ObjectScriptlvl2 : MonoBehaviour
         HumaveePos = humavee.GetComponent<RectTransform>().localPosition;
         CarToplessPos = carTopless.GetComponent<RectTransform>().localPosition;
         MotobikePos = Motobike.GetComponent<RectTransform>().localPosition;
+
     }
 }

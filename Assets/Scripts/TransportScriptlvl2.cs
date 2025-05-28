@@ -26,7 +26,7 @@ public class TransportScriptlvl2 : MonoBehaviour
             {
                 Debug.Log("Up Arrow Pressed");
                 if (objectScript.lastDragged.
-                    GetComponent<RectTransform>().transform.localScale.y < 1.5f)
+                    GetComponent<RectTransform>().transform.localScale.y < 3f)
                 {
                     objectScript.lastDragged.GetComponent<RectTransform>().
                         transform.localScale = new Vector2(
@@ -68,7 +68,7 @@ public class TransportScriptlvl2 : MonoBehaviour
             if (Input.GetKey(KeyCode.RightArrow))
             {
                 if (objectScript.lastDragged.
-                    GetComponent<RectTransform>().transform.localScale.x < 1.5f)
+                    GetComponent<RectTransform>().transform.localScale.x < 2f)
                 {
                     objectScript.lastDragged.GetComponent<RectTransform>().
                         transform.localScale = new Vector2(
@@ -77,6 +77,11 @@ public class TransportScriptlvl2 : MonoBehaviour
                          objectScript.lastDragged.GetComponent<RectTransform>().
                          transform.localScale.y);
                 }
+            }
+
+            if (Input.GetKeyDown(KeyCode.C))
+            {
+                objectScript.lastDragged.GetComponent<RectTransform>().Rotate(0, 0, 180f);
             }
         }
     }

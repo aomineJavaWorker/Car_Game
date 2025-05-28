@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class TimerScript2lvl : MonoBehaviour
 {
-    public ObjectScriptlvl2[] objectScriptLvl2;  
+    public ObjectScriptlvl2[] objectScript;  
     public GameObject winPanel;
     public Text timeText;
     public Text winTimeText;  
@@ -61,7 +61,7 @@ public class TimerScript2lvl : MonoBehaviour
 
     private bool AllVehiclesPlacedCorrectly()
     {
-        foreach (var obj in objectScriptLvl2)
+        foreach (var obj in objectScript)
         {
             if (!(obj.isVeloGPlaced &&
                   obj.isTouringPlaced &&
@@ -91,9 +91,9 @@ public class TimerScript2lvl : MonoBehaviour
 
         if (winSprites.Length > 0 && winImage != null)
         {
-            if (timer < 60f)
+            if (timer < 60) // mainoties laikam mainās arī vertējuma bilde
                 currentSpriteIndex = 0; // 3 zvaigznes
-            else if (timer < 120f)
+            else if (timer < 120)
                 currentSpriteIndex = 1; // 2 zvaigznes
             else
                 currentSpriteIndex = 2; // 1 zvaigzne

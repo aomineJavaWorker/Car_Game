@@ -782,8 +782,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -88.162}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 885, y: -294}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 883.93164, y: -267.28842}
+  m_SizeDelta: {x: 70.1498, y: 99.5963}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1050392253
 MonoBehaviour:
@@ -872,8 +872,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 62.1, y: -20.6}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 326.1245, y: -375.83}
+  m_SizeDelta: {x: 71.2778, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1092192644
 MonoBehaviour:
@@ -1229,6 +1229,7 @@ GameObject:
   - component: {fileID: 1233244745}
   - component: {fileID: 1233244746}
   - component: {fileID: 1233244747}
+  - component: {fileID: 1233244748}
   m_Layer: 0
   m_Name: ScriptHolder
   m_TagString: Untagged
@@ -1284,7 +1285,7 @@ MonoBehaviour:
   HumaveePos: {x: 0, y: 0}
   CarToplessPos: {x: 0, y: 0}
   MotobikePos: {x: 0, y: 0}
-  audioSource: {fileID: 0}
+  audioSource: {fileID: 1980317109}
   audioClips:
   - {fileID: 8300000, guid: 4ca4304c9faee854494fbb8594ce9ea9, type: 3}
   - {fileID: 8300000, guid: 5abe307ee9364e840bc6c4d03214913c, type: 3}
@@ -1307,7 +1308,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2248e83443027de4a99b381f61e41bca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectScriptLvl2: []
+  objectScript:
+  - {fileID: 1233244743}
   winPanel: {fileID: 1997098188}
   timeText: {fileID: 1662613737}
   winTimeText: {fileID: 2005562210}
@@ -1344,6 +1346,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectScript: {fileID: 1233244743}
+--- !u!114 &1233244748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1233244737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a16876a4c8e2f4d45b5a2ac9edb142d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  darkImage: {fileID: 0}
+  darkDuration: 2
+  interval: 5
+  fadeSpeed: 2
 --- !u!1 &1266987155
 GameObject:
   m_ObjectHideFlags: 0
